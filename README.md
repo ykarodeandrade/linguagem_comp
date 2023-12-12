@@ -1,55 +1,50 @@
-# CryptoLogos
+# Logus
 
-### Está é uma linguagem de programação que remete ao Classicismo Romano e mescla conceitos de criptografica em seus scripts
+### Está é uma linguagem de programação que remete ao Classicismo Romano.
 
 # LATIM
 
 ## EBNF
 
-    PROGRAMMA = { DECLARATIO };
+    PROGRAM = { STATEMENT };
 
-    BLOCUS = { "{", "\n", DECLARATIO, "}" };
+    BLOCK = { "{", STATEMENT, "}"};
 
-    DECLARATIO = ( lambda | ASSIGNATIO | CONDITIO | IMPRIMERE | PROPTER | DUM | VARIABILIS ), "\n";
+    STATEMENT = ( λ | ASSIGNMENT | CONDIT | PRINT | LOOP | VAR | DECLARATION | RETURN_DEC ), "\n" ;
 
-    ASSIGNATIO = IDENTIFICATIO, "=", EXPRESSIO_RELATIONIS;
+    ASSIGMENT = IDENTIFIER, "=", BOOL_EXP;
 
-    CONDITIO = "si", EXPRESSIO_BOOLEANA, {"aliter", BLOCUS | BLOCUS};
+    CONDIT = "si", EXPRESSION, {"aliter", BLOCK|BLOCK};
 
-    IMPRIMERE = "ostendere", "(", EXPRESSIO_BOOLEANA, ")";
+    PRINT = "ostendere", "(", BOOL_EXP, ")";
 
-    PROPTER = "propter", ASSIGNATIO, "ad", ASSIGNATIO, BLOCUS;
+    LOOP = "enim", ASSIGMENT, ";", EXPRESSION, ";", ASSIGMENT, BLOCK;
 
-    DUM = "dum", EXPRESSIO_BOOLEANA, BLOCUS;
-
-    VARIABILIS = TYPUS, ":", IDENTIFICATIO, {"=", EXPRESSIO_BOOLEANA};
+    VARIABILIS = TYPUS, ":", IDENTIFIER, {"=", EXPRESSION_BOOLEANA};
 
     TYPUS = (integer | catena_characterum);
 
-    EXPRESSIO_BOOLEANA = TERMINUS_BOOLEANUS, {("||"), TERMINUS_BOOLEANUS};
+    BOOL_EXP = BOOLTERM, {("||"), BOOLTERM};
 
-    TERMINUS_BOOLEANUS = EXPRESSIO_RELATIONIS, {("&&"), EXPRESSIO_RELATIONIS};
+    BOOLTERM = RELEXPRESSION, {("&&"), RELEXPRESSION};
 
-    EXPRESSIO_RELATIONIS = EXPRESSIO, {("==" | ">" | "<"), EXPRESSIO};
+    RELEXPRESSION = EXPRESSION, {("==" | "<" | ">"), EXPRESSION};
 
-    EXPRESSIO = TERMINUS, {("+" | "-"), TERMINUS};
+    EXPRESSION = TERM, {("+" | "-" | "."), TERM};
 
-    TERMINUS = FACTOR, {("*" | "/"), FACTOR};
+    TERM = FACTOR, {("*" | "/"), FACTOR };
 
-    FACTOR = (("+" | "-" | "!"), FACTOR | INTEGER | CATENA_CHARACTERUM | "(", EXPRESSIO, ")" | IDENTIFICATIO | INPUT);
+    FACTOR = (("+" | "-" | "!"), FACTOR | STRING | NUMBER | "(", EXPRESSION, ")" | IDENTIFIER, [ "(", ( { BOOL_EXP, ( ",", λ | BOOL_EXP ) } | λ ), ")" ] | SCAN);
 
-    IDENTIFICATIO = LITTERA, { LITTERA | DIGITUS | "_"};
+    SCAN = "input", "(", ")";
 
-    INPUT = "input", "(", ")";
+    IDENTIFIER = LETTER, { LETTER | DIGIT | "_"};
 
-    CATENA_CHARACTERUM = ", {LITTERA}+, ";
+    NUMBER = DIGIT, {DIGIT};
 
-    INTEGER = {NUMERUS}+;
+    STRING = ( a | ... | z | A | .. | Z);
 
-    NUMERUS = DIGITUS, { DIGITUS };
+    DIGIT = ( 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 );
 
-    LITTERA = (a | ... | z | A | .. | Z);
-
-    DIGITUS = (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0);
 
 ## Para mais delathes veja a apresentação que se encontra neste repositório.
