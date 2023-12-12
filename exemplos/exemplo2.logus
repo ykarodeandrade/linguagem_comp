@@ -1,0 +1,13 @@
+officium main() integri {
+
+    variabilis a integri = gestus()
+    variabilis b integri = gestus()
+
+    variabilis c integri
+
+    c = a / b
+
+    ostendere(c)
+
+    
+}

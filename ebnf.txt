@@ -1,45 +1,39 @@
-KMJBMVHV = { YZXGVMVXVJ };
+PROGRAM = { STATEMENT };
 
-WGJXJ = { "{", "\i", YZXGVMVXVJ, "}" };
+BLOCK = { "{", STATEMENT, "}"};
 
-YZXGVMVXVJ = ( gvhwyv | VOMDWPDXVJ | XJIYDXDJIVG | DHKMDHDM | KVMV_XVYV | ZILPVIOJ | QVMDVQZG ), "\i";
+STATEMENT = ( λ | ASSIGNMENT | PRINT | CONDIT | LOOP | VAR | DECLARATION | RETURN_DEC ), "\n" ;
 
-VOMDWPDXVJ = DYZIODADXVYJM, "=", ZSKMZNNVJ MZGVXDJIVG;
+ASSIGMENT = IDENTIFIER, "=", BOOL_EXP;
 
-XJIYDXDJIVG = "nz", ZSKMZNNVJ WJJGZVIV, {"nzivj", WGJXJ | WGJXJ};
+CONDIT = "si", EXPRESSION, {"aliter", BLOCK|BLOCK};
 
-DHKMDHDM = "hjnomvm", "(", ZSKMZNNVJ WJJGZVIV, ")";
+PRINT = "ostendere", "(", BOOL_EXP, ")";
 
-KVMV_XVYV = "kvmv_xvyv", VOMDWPDXVJ, "kvmv", VOMDWPDXVJ, WGJXJ;
+LOOP = "enim", ASSIGMENT, ";", EXPRESSION, ";", ASSIGMENT, BLOCK;
 
-ZILPVIOJ = "zilpvioj", ZSKMZNNVJ WJJGZVIV, WGJXJ;
+VARIABILIS = TYPUS, ":", IDENTIFIER, {"=", EXPRESSION_BOOLEANA};
 
-QVMDVQZG = ODKJ, ":", DYZIODADXVYJM, {"=", ZSKMZNNVJ WJJGZVIV};
+TYPUS = (integer | catena_characterum);
 
-ODKJ = (diozdmj | nomdib);
+BOOL_EXP = BOOLTERM, {("||"), BOOLTERM};
 
-ZSKMZNNVJ WJJGZVIV = OZMHJ WJJGZVIJ, {("||"), OZMHJ WJJGZVIJ};
+BOOLTERM = RELEXPRESSION, {("&&"), RELEXPRESSION};
 
-OZMHJ WJJGZVIJ = ZSKMZNNVJ MZGVXDJIVG, {("&&"), ZSKMZNNVJ MZGVXDJIVG};
+RELEXPRESSION = EXPRESSION, {("==" | "<" | ">"), EXPRESSION};
 
-ZSKMZNNVJ MZGVXDJIVG = ZSKMZNNVJ, {("==" | ">" | "<"), ZSKMZNNVJ};
+EXPRESSION = TERM, {("+" | "-" | "."), TERM};
 
-ZSKMZNNVJ = OZMHJ, {("+" | "-"), OZMHJ};
+TERM = FACTOR, {("*" | "/"), FACTOR };
 
-OZMHJ = AVOJM, {("*" | "/"), AVOJM};
+FACTOR = (("+" | "-" | "!"), FACTOR | STRING | NUMBER | "(", EXPRESSION, ")" | IDENTIFIER, [ "(", ( { BOOL_EXP, ( ",", λ | BOOL_EXP ) } | λ ), ")" ] | SCAN);
 
-AVOJM = (("+" | "-" | "!"), AVOJM | DIOZDMJ | NOMDIB | "(", ZSKMZNNVJ, ")" | DYZIODADXVYJM | ZIOMVYV);
+SCAN = "input", "(", ")";
 
-DYZIODADXVYJM = GZOMV, { GZOMV | YDBDOJ | "_"};
+IDENTIFIER = LETTER, { LETTER | DIGIT | "_"};
 
-ZIOMVYV = "ziomvyv", "(", ")";
+NUMBER = DIGIT, {DIGIT};
 
-NOMDIB = ", {GZOMV}+, ";
+STRING = ( a | ... | z | A | .. | Z);
 
-DIOZDMJ = {IPHZMJ}+;
-
-IPHZMJ = YDBDOJ, { YDBDOJ };
-
-GZOMV = (v | ... | u | V | .. | U);
-
-YDBDOJ = (1 | 2 | 3 | 4 | 5. | 6 | 7 | 8 | 9 | 0);
+DIGIT = ( 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 );

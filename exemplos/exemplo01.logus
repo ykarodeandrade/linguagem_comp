@@ -1,0 +1,11 @@
+// soma dois numeros
+officium soma(x integri, y integri) integri {
+    responsio x + y
+}
+
+
+
+// equivalente em go
+//func soma(x int, y int) int {
+   // return x + y
+//}

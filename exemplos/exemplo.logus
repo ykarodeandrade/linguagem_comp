@@ -1,0 +1,12 @@
+officium main() integri {
+
+    variabilis a integri = 5
+    variabilis b integri = 10
+    variabilis c integri
+
+    c = a * b
+
+    ostendere(c)
+
+    
+}

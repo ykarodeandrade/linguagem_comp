@@ -1,0 +1,82 @@
+
+officium soma(x integri, y integri) integri {
+    responsio x + y
+}
+
+officium read() integri {
+    responsio gestus()
+}
+
+officium concat(a catena_characterum, b catena_characterum) catena_characterum {
+    responsio a . b
+}
+
+officium main() integri {
+    variabilis x_1 integri
+    x_1 = soma(read()-1, 1)
+    soma(2, 1)
+
+    ostendere(x_1)
+
+    si (x_1 > 1 && !!!(x_1 < 1)) || x_1 == 3 {
+        x_1 = 2
+    } 
+
+
+    variabilis x integri = 3+6/3   *  2 -+-  +  2*4/2 + 0/1 -((6+ ((4)))/(2)) // Teste // Teste 2
+    variabilis y_1 integri = 3
+    y_1 = soma(y_1, x_1)
+    variabilis z__ integri
+    z__ = soma(x, y_1)
+
+    si x_1 == 2 {
+        x_1 = 2
+    }
+
+    si x_1 == 3 {
+        x_1 = 2
+    } aliter {
+        x_1 = 3
+    }
+
+    enim x_1 = 0; x_1 < 1 || x == 2; x_1 = soma(x_1, 1) {
+        ostendere(x_1)
+    } 
+
+
+
+    // Saida final
+    ostendere(x_1)
+    ostendere(x)
+    ostendere(z__+1)
+
+    // All bool and integri operations
+    variabilis y integri = 2
+    variabilis z integri
+    z = (y == 2)
+    ostendere(y+z)
+    ostendere(y-z)
+    ostendere(y*z)
+    ostendere(y/z)
+    ostendere(y == z)
+    ostendere(y < z)
+    ostendere(y > z)
+
+    // All str operations 
+    variabilis a catena_characterum 
+    variabilis b catena_characterum
+
+    x_1 = 1 
+    y = 1 
+    z = 2
+    a = "abc"
+    b = "def"
+    ostendere(concat(a."",b.""))
+    ostendere(a.x_1)
+    ostendere(x_1.a)
+    ostendere(y.z)
+    ostendere(a.(x_1==1))
+    ostendere(a == a)
+    ostendere(a < b)
+    ostendere(a > b)
+}

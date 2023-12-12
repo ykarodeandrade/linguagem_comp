@@ -7,8 +7,7 @@
 "si"                    { return SI; }
 "aliter"                { return ALITER; }
 "ostendere"             { return OSTENDERE; }
-"propter"               { return PROPTER; }
-"dum"                   { return DUM; }
+"enim"                   { return ENIM; }
 "input"                 { return INPUT; }
 "integer"               { return TYPUS_INTEGER; }
 "catena_characterum"    { return TYPUS_CATENA; }

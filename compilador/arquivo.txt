@@ -1,0 +1,3 @@
+É o arquivo main.py deste repositório.
+
+Para tester entre no diretorio e digite: python main.py <arquivo.logus>

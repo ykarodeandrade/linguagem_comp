@@ -2,9 +2,6 @@
 
 ### Está é uma linguagem de programação que remete ao Classicismo Romano e mescla conceitos de criptografica em seus scripts
 
-
-
-
 # LATIM
 
 ## EBNF
@@ -55,52 +52,4 @@
 
     DIGITUS = (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0);
 
-# CRIPTOGRAFADA
-
-## EBNF
-
-    EGDVGPBBP = { STRAPGPIXD };
-
-    QADRJH = { "{", "\c", STRAPGPIXD, "}" };
-
-    STRAPGPIXD = ( apbqsp | PHHXVCPIXD | RDCSXIXD | XBEGXBTGT | EGDEITG | SJB | KPGXPQXAXH ), "\c";
-
-    PHHXVCPIXD = XSTCIXUXRPIXD, "=", TMEGTHHXD_GTAPIXDCXH;
-
-    RDCSXIXD = "hx", TMEGTHHXD_QDDATPCP, {"paxitg", QADRJH | QADRJH};
-
-    XBEGXBTGT = "dhitcstgt", "(", TMEGTHHXD_QDDATPCP, ")";
-
-    EGDEITG = "egdeitg", PHHXVCPIXD, "ps", PHHXVCPIXD, QADRJH;
-
-    SJB = "sjb", TMEGTHHXD_QDDATPCP, QADRJH;
-
-    KPGXPQXAXH = INEJH, ":", XSTCIXUXRPIXD, {"=", TMEGTHHXD_QDDATPCP};
-
-    INEJH = (xcitvtg | higxcv);
-
-    TMEGTHHXD_QDDATPCP = ITGBXCJH_QDDATPCJH, {("||"), ITGBXCJH_QDDATPCJH};
-
-    ITGBXCJH_QDDATPCJH = TMEGTHHXD_GTAPIXDCXH, {("&&"), TMEGTHHXD_GTAPIXDCXH};
-
-    TMEGTHHXD_GTAPIXDCXH = TMEGTHHXD, {("==" | ">" | "<"), TMEGTHHXD};
-
-    TMEGTHHXD = ITGBXCJH, {("+" | "-"), ITGBXCJH};
-
-    ITGBXCJH = UPRIDG, {("*" | "/"), UPRIDG};
-
-    UPRIDG = (("+" | "-" | "!"), UPRIDG | XCITVTG | HIGXCV | "(", TMEGTHHXD, ")" | XSTCIXUXRPIXD | XCEJI);
-
-    XSTCIXUXRPIXD = AXIITGP, { AXIITGP | SXVXIJH | "_"};
-
-    XCEJI = "xceji", "(", ")";
-
-    HIGXCV = ", {AXIITGP}+, ";
-
-    XCITVTG = {CJBTGJH}+;
-
-    CJBTGJH = SXVXIJH, { SXVXIJH };
-
-    AXIITGP = (p | ... | o | P | .. | O);
-
-    SXVXIJH = (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0);
+## Para mais delathes veja a apresentação que se encontra neste repositório.
